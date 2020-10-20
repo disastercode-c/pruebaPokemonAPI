@@ -18,16 +18,11 @@ function searchPokemon(nombrePokemon){
             let defense = data.stats[2].base_stat;
             let attack = data.stats[1].base_stat;
             let hp = data.stats[0].base_stat;
-            let tipo;
-            if(data.types.length == 1){
-                tipo ="Sin registros"
-            }else{
-                tipo = data.types[1].type.name;
-            }
+
             $("#stats").html(`
                 <p>Name: <strong>${data.name}</strong></p>
-                <p>Type (principal): <strong>${data.types[0].type.name}</strong></p>
-                <p>Type (secondary): <strong>${tipo}</strong></p>
+                ${data.types[1] == null ? `<p>Type: <strong>${data.types[0].type.name}</strong></p>` : `<p>Type (Principal): <strong>${data.types[0].type.name}</strong></p>`}
+                ${data.types[1] == null ? " " : `<p>Type (Secondary): <strong>${data.types[1].type.name}</strong></p>`}
                 <p>Weight: <strong>${data.weight}</strong> lbs.</p>
                 <p>Height: <strong>${data.height}</strong></p>
                 <p>Ability (1): <strong>${data.abilities[0].ability.name}</strong></p>
