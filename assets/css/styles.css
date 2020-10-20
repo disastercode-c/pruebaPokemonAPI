@@ -287,7 +287,7 @@
         -moz-border-radius: 30px;
         -o-border-radius: 30px;
     }
-    div#bigbluebutton {
+    #bigbluebutton {
         background: url('../img/pokeball2.png');
         background-size: cover;
         background-repeat: no-repeat;
@@ -296,8 +296,7 @@
         position: absolute;
         top: 395px;
         left: 30px;
-        border-radius: 100px;
-
+        border-radius: 100px;  
     }
     div.search {
         position: absolute;
