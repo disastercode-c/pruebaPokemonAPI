@@ -25,8 +25,8 @@ function searchPokemon(nombrePokemon){
                 ${data.types[1] == null ? " " : `<p>Type (Secondary): <strong>${data.types[1].type.name}</strong></p>`}
                 <p>Weight: <strong>${data.weight}</strong> lbs.</p>
                 <p>Height: <strong>${data.height}</strong></p>
-                <p>Ability (1): <strong>${data.abilities[0].ability.name}</strong></p>
-                <p>Ability (2): <strong>${data.abilities[1].ability.name}</strong></p>
+                ${data.abilities[1]==null ? `<p>Ability: <strong>${data.abilities[0].ability.name}</strong></p>` : `<p>Ability(1): <strong>${data.abilities[0].ability.name}</strong></p>`} 
+                ${data.abilities[1]==null ? "" : `<p>Ability(2): <strong>${data.abilities[1].ability.name}</strong></p>`} 
             `);
             
             $("#pokeImagen").attr('src', data.sprites.other["official-artwork"].front_default);
